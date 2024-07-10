@@ -5,16 +5,11 @@ const createProductValidationSchema = z.object({
         name: z.string({
             required_error: "Name is required",
             invalid_type_error: "Name must be a string",
-        })
-            .min(5, { message: "Name must be 5 or more characters long" })
-            .max(20, { message: "Name must be 20 or less characters long" }),
-
+        }),
         description: z.string({
             required_error: "Description is required",
             invalid_type_error: "Description must be a string",
-        })
-            .min(20, { message: "Name must be 20 or more characters long" })
-            .max(60, { message: "Name must be 60 or less characters long" }),
+        }),
         price: z.number({
             required_error: "Price is required",
             invalid_type_error: "Price must be a number",
@@ -59,15 +54,11 @@ const updateProductValidationSchema = z.object({
             required_error: "Name is required",
             invalid_type_error: "Name must be a string",
         })
-            .min(5, { message: "Name must be 5 or more characters long" })
-            .max(20, { message: "Name must be 20 or less characters long" })
             .optional(),
         description: z.string({
             required_error: "Description is required",
             invalid_type_error: "Description must be a string",
         })
-            .min(20, { message: "Name must be 20 or more characters long" })
-            .max(60, { message: "Name must be 60 or less characters long" })
             .optional(),
         price: z.number({
             required_error: "Price is required",
